@@ -687,25 +687,25 @@ $(document).ready(function () {
 			bar = new progressBar();
 
 			if (algorithm == "FCFS") {
-				$("#algorithm_explanation").text("First Come First Served will execute proccesses in the order in which they arrived");
+				$("#algorithm_explanation").text("Primero en llegar, primero en ser atendido ejecutará los procesos en el orden en que llegaron.");
 				FCFS();
 				processTotal = processArray;
 			}
 
 			else if (algorithm == "SJF") {
-				$("#algorithm_explanation").text("Shortest Job First will execute proccesses from smallest to biggest");
+				$("#algorithm_explanation").text("El más corto primero ejecutará los procesos de menor a mayor duración.");
 				SJF();
 				processTotal = processArray;
 			}
 
 			else if (algorithm == "SRJF") {
 				SRJF();
-				$("#algorithm_explanation").text("Shortest Remaining Job First will execute proccesses from smallest to biggest. If a new proccess arrives that is smaller than the currently running proccess, it will interrupt it.");
+				$("#algorithm_explanation").text("El trabajo restante más corto primero ejecutará los procesos de menor a mayor duración. Si llega un nuevo proceso que es más pequeño que el proceso actualmente en ejecución, lo interrumpirá.");
 				processTotal = processArray;
 			}
 
 			else if (algorithm == "Round Robin") {
-				$("#algorithm_explanation").text("Round Robin will execute each proccess for the duration of the time quantum. It will then move on to the next proccess. ");
+				$("#algorithm_explanation").text("Round Robin ejecutará cada proceso durante la duración del quantum de tiempo. Luego pasará al siguiente proceso ");
 				roundRobin();
 				processTotal = processArray;
 				tq = timeQuantum;
@@ -715,7 +715,7 @@ $(document).ready(function () {
 
 			if (algorithm == "Priority") {
 				$(".priority").collapse("show");
-				$("#algorithm_explanation").text("Priority Scheduling will execute each process according to the assigned priority. In this case a lower priority number is better.");
+				$("#algorithm_explanation").text("El Programador por Prioridad ejecutará cada proceso según la prioridad asignada. En este caso, un número de prioridad más bajo es mejo");
 				priority();
 				processTotal = processArray;
 			}

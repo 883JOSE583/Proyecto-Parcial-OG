@@ -112,9 +112,8 @@
 
 
 
-    <h2 style="text-align: center;">CPU&nbsp;scheduler</h2>
-    <p id="adj_counter" style="text-align: center;" class="lead">Type values into the table and the chart on the bottom
-      will show how this runs</p>
+    <h2 style="text-align: center;">Planificador de CPU</h2>
+    <p id="adj_counter" style="text-align: center;" class="lead">Escriba valores en la tabla y el gráfico en la parte inferior mostrará cómo se ejecuta esto</p>
 
 
 
@@ -122,10 +121,10 @@
     <table class="table table-bordered table-condensed" id="inputTable">
       <thead>
         <tr>
-          <th>Process:</th>
-          <th>Arrival Time:</th>
-          <th>Burst Time:</th>
-          <th class="priority collapse">Priority:</th>
+          <th>Proceso:</th>
+          <th>Tiempo de Llegada:</th>
+          <th>Tiempo de Ráfaga:</th>
+          <th class="priority collapse">Prioridad:</th>
         </tr>
       </thead>
       <tbody id="processTable">
@@ -215,7 +214,7 @@
 
         <div class="col-md-4">
           <div style=" display:inline-block;">
-            <label>Algorithm:</label>
+            <label>Algoritmo:</label>
           </div>
 
 
@@ -225,11 +224,11 @@
               FCFS <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-              <li><a calcStyle="FCFS" id="simple_calc">First Come First Served</a></li>
-              <li><a calcStyle="SJF" id="simple_calc">Shortest Job First (non-premptive)</a></li>
-              <li><a calcStyle="SRJF" id="fancy_calc">Shortest Remaing Job First (premptive)</a></li>
+              <li><a calcStyle="FCFS" id="simple_calc">Primero en llegar, primero en ser atendido</a></li>
+              <li><a calcStyle="SJF" id="simple_calc">El trabajo más corto primero (no preemptivo)</a></li>
+              <li><a calcStyle="SRJF" id="fancy_calc">El trabajo restante más corto primero (preemptivo)</a></li>
               <li><a calcStyle="Round Robin" id="fast_calc">Round Robin</a></li>
-              <li><a calcStyle="Priority" id="fast_calc">Priority</a></li>
+              <li><a calcStyle="Priority" id="fast_calc">Prioridad</a></li>
             </ul>
           </div>
 
@@ -239,7 +238,7 @@
         </div><!-- /column -->
         <div class="col-md-4">
           <div>
-            <label>Number of Processes:</label>
+            <label>Número de Procesos:</label>
           </div>
           <div class="input-group">
             <span class="input-group-btn">
@@ -257,7 +256,7 @@
 
 
           <div style="margin-top:20px; ">
-            <label>Context Switch Time:</label>
+            <label>Tiempo de Cambio de Contexto:</label>
           </div>
           <div class="input-group">
             <span class="input-group-btn">
@@ -278,7 +277,7 @@
 
           <div class="hidden" id="solver_group">
             <div style="margin-top:20px; ">
-              <label>Time Quantum:</label>
+              <label>Cuántum de Tiempo:</label>
             </div>
             <div class="input-group">
               <span class="input-group-btn">
@@ -304,13 +303,13 @@
 
 
         <div style="display: block; text-align: center;">
-          <p>Click on the run button to show the Output Table</p>
-          <button id="runBtn" class="runButton">Run</button>
+          <p>Haga clic en el botón Ejecutar para mostrar la Tabla de Salida</p>
+          <button id="runBtn" class="runButton">Ejecutar</button>
         </div>
 
         <div style="display: block; text-align: center;">
-          <p>Click on the Reset button to run another program</p>
-          <button onclick=(location.reload()) class="runButton">Reset</button>
+          <p>Haga clic en el botón Reiniciar para ejecutar otro programa</p>
+          <button onclick=(location.reload()) class="runButton">Reiniciar</button>
         </div>
 
         <!-- <div class="col-md-4" style="margin-top:20px;">
@@ -336,19 +335,19 @@
 
     <!-- <div id="outputDiv"></div> -->
 
-    <h1 style="text-align: center;">Output Table</h1>
+    <h1 style="text-align: center;">Tabla de Salida</h1>
     <hr>
 
     <table class="table table-bordered table-condensed" id="outputTable" style="margin-bottom: 50px;">
       <thead>
         <tr>
-          <th style="background-color: #9adcff;">Process:</th>
-          <th style="background-color: #9ADCFF;">Arrival Time:</th>
-          <th style="background-color: #9ADCFF;">Burst Time:</th>
+          <th style="background-color: #9adcff;">Proceso:</th>
+          <th style="background-color: #9ADCFF;">Hora de Llegada:</th>
+          <th style="background-color: #9ADCFF;">Tiempo de Ejecucion:</th>
           <!-- <th class="priority collapse">Priority:</th> -->
-          <th style="background-color: #9ADCFF;">Completion Time: </th>
-          <th style="background-color: #9ADCFF;">Turn around Time: </th>
-          <th style="background-color: #9ADCFF;">Waiting Time: </th>
+          <th style="background-color: #9ADCFF;">Tiempo de Finalización: </th>
+          <th style="background-color: #9ADCFF;">Tiempo de Rotación: </th>
+          <th style="background-color: #9ADCFF;">Tiempo de Espera: </th>
         </tr>
       </thead>
 
@@ -358,7 +357,7 @@
 
 
     <div class="datavisulization">
-    <h2 style="text-align: center; margin-bottom: 40px;">Data Visulization</h2>
+    <h2 style="text-align: center; margin-bottom: 40px;">Visualización de Datos</h2>
 
 
     <!-- <div class="barChart">
@@ -369,7 +368,7 @@
     <div class="pie" id="chartdiv">
       <div class="first">
         <div class="chartMenu">
-          <p>Waiting Time Chart</p>
+          <p>Gráfico de Tiempo de Espera</p>
         </div>
         <div class="chartCard">
           <div class="chartBox">
@@ -382,7 +381,7 @@
       </div>
       <div class="second">
         <div class="chartMenu">
-          <p>Turn around Time Chart</p>
+          <p>Gráfico de Tiempo de Rotación</p>
         </div>
         <div class="chartCard">
           <div class="chartBox">
@@ -396,47 +395,27 @@
   </div>
 
 
-    <span style="font-size: large; color: rgb(3, 27, 94);">CPU Utilization:
+    <span style="font-size: large; color: rgb(3, 27, 94);">Utilización de la CPU:
       <div id="utilization" style="color:rgba(255, 26, 104, 1);"></div>
     </span>
-    <span style="font-size: large; color: rgb(3, 27, 94);">Average waiting time:
+    <span style="font-size: large; color: rgb(3, 27, 94);">Tiempo promedio de espera:
       <div id="avgwt" style="color:rgba(255, 26, 104, 1);"></div>
     </span>
-    <span style="font-size: large; color: rgb(3, 27, 94);">Average turn around time:
+    <span style="font-size: large; color: rgb(3, 27, 94);">Tiempo promedio de rotación:
       <div id="avgtat" style="color:rgba(255, 26, 104, 1);"></div>
     </span>
 
-    <button id="explanation">Show Explanation</button>
+    <button id="explanation">Mostrar Explicación</button>
   
 
       <div class="explain container_docs" id="ex">
-        <h1>Algorithm Explanation</h1>
-        <p style="color: #FD5D5D; font-size: large;">User Input :</p>
+        <h1>Explicación del Algoritmo</h1>
+        <p style="color: #FD5D5D; font-size: large;">Entrada del Usuario :</p>
         <p id="input"></p>
         <p id="steps"></p>
       </div>
 
   </div><!-- /containter -->
-
-  <section class="footer">
-    
-
-    <div class="icons">
-      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/invites/contact/?i=17s1o7wfms500&utm_content=i08g8yn"><i
-          class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/Krutarth12345?t=JASTMDZLzUB4VOR-OEd_kg&s=09"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.linkedin.com/in/krutarth-patel-653065205 "><i class="fab fa-linkedin"></i></a>
-    </div>
-
-    <p>Made With <i class="far fa-heart"></i> by G5-team1</p>
-    <p> <i class="fa fa-copyright"></i> copyright 2022 || All rights reserved</p>
-  </section>
-
-
-
-
-  
   <!-- <script src="js/new.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"
